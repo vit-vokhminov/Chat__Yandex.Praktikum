@@ -1,6 +1,6 @@
 ## Ссылка на Pull Requests
 
-https://github.com/vit-vokhminov/mf.messenger.praktikum.yandex/pull/1
+https://github.com/vit-vokhminov/mf.messenger.praktikum.yandex
 
 Как могло получиться что в моём gitHub теперь два репозитория:
 mf.messenger.praktikum.yandex
