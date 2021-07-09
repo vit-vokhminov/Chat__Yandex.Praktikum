@@ -6,7 +6,8 @@ https://github.com/vit-vokhminov/mf.messenger.praktikum.yandex
 "mf.messenger.praktikum.yandex" и "middle.messenger.praktikum.yandex"
 
 Свой проект залил в mf, там уже были файлы с прошлых спринтов. А middle, который является пустым уходит на проверку.
-Второй репозиторий (middle) мог появиться после каких то изменений в "теории" курса?
+
+Второй репозиторий (middle) могли появиться после каких то изменений в "теории" курса?
 И что делать сейчас? Перенести проект в репозиторий "middle.messenger.praktikum.yandex"?
 
 ---
