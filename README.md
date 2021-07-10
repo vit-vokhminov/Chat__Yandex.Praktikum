@@ -3,12 +3,14 @@
 https://github.com/vit-vokhminov/middle.messenger.praktikum.yandex
 
 Как могло получиться что в моём gitHub теперь два репозитория:
-"mf.messenger.praktikum.yandex" и "middle.messenger.praktikum.yandex"
+"mf.messenger.praktikum.yandex" и "middle.messenger.praktikum.yandex"?
 
 Свой проект залил в mf, там уже были файлы с прошлых спринтов. А middle, который является пустым уходит на проверку.
 
-Второй репозиторий (middle) могли появиться после каких то изменений в "теории" курса?
-И что делать сейчас? Перенести проект в репозиторий "middle.messenger.praktikum.yandex"?
+Перезалил проект из mf в middle.
+
+Как мог появиться второй репозиторий middle? Мог ли он появиться после каких то изменений в "теории" курса?
+
 
 # Чат__Яндекс.Практикум
 
