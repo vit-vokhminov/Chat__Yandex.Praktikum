@@ -14,6 +14,7 @@
         "quotes": "off",
         "linebreak-style": 0,
         "indent": ["error", 4],
-        "operator-linebreak" : "off"
+        "operator-linebreak" : "off",
+        "moduleResolution": "off"
     }
 }

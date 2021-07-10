@@ -1,0 +1,61 @@
+@import url(./resetNormalize.css);
+@import url(./fonts.css);
+@import url(./pages/authorization.css);
+@import url(./pages/chat.css);
+@import url(./pages/pageError.css);
+@import url(./pages/profile.css);
+@import url(./pages/registration.css);
+
+
+html,body {height: 100%; }
+body { /*font-family: 'Inter';*/ font-weight: normal;font-style: normal;color: #1E1E1E; }
+
+.app {min-height: 100%;display: block;}
+a {text-decoration: none;cursor: pointer;}
+* {box-sizing: border-box;-moz-box-sizing: border-box;}
+input::-webkit-input-placeholder      			{ opacity: 1 !important;color: #999; }
+input::-moz-placeholder                         { opacity: 1 !important;color: #999; }
+input:-moz-placeholder                          { opacity: 1 !important;color: #999; }
+input:-ms-input-placeholder                		{ opacity: 1 !important;color: #999; }
+textarea::-webkit-input-placeholder 			{ opacity: 1 !important;color: #999; }
+textarea::-moz-placeholder                  	{ opacity: 1 !important;color: #999; }
+textarea:-moz-placeholder                    	{ opacity: 1 !important;color: #999; }
+textarea:-ms-input-placeholder          		{ opacity: 1 !important;color: #999; }
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0px 1000px #ffffff inset !important;
+}
+
+.flexcenter {
+    display: -ms-flexbox;display: -webkit-flex;display: flex;-webkit-flex-direction: row;-ms-flex-direction: row;flex-direction: row;-webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;flex-wrap: nowrap;-webkit-justify-content: center;-ms-flex-pack: center;justify-content: center;-webkit-align-content: center;-ms-flex-line-pack: center;
+    align-content: center;-webkit-align-items: center;-ms-flex-align: center;align-items: center;
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+
+.form__error {
+    margin: 7px 0 0;
+    opacity: 1;
+    color: red;
+    transition: opacity 0.15s ease-in;
+
+    font-family: inherit;
+    font-style: inherit;
+    font-weight: normal;
+    font-size: 8px;
+    line-height: 8px;
+}
+
+.form__error_hidden {
+    opacity: 0;
+}
