@@ -1,8 +1,14 @@
 ## Ссылка на Pull Requests
 
-https://github.com/vit-vokhminov/middle.messenger.praktikum.yandex/pull/3
+https://github.com/vit-vokhminov/middle.messenger.praktikum.yandex
 
-Перезалил проект. С моей стороны собирается нормально. Команды запуска описаны ниже.
+Как могло получиться что в моём gitHub теперь два репозитория:
+"mf.messenger.praktikum.yandex" и "middle.messenger.praktikum.yandex"
+
+Свой проект залил в mf, там уже были файлы с прошлых спринтов. А middle, который является пустым уходит на проверку.
+
+Второй репозиторий (middle) могли появиться после каких то изменений в "теории" курса?
+И что делать сейчас? Перенести проект в репозиторий "middle.messenger.praktikum.yandex"?
 
 
 # Чат__Яндекс.Практикум
