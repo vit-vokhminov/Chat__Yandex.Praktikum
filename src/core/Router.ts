@@ -4,44 +4,48 @@ import Block from "./Block";
 // Router отвечает только за изменение URL и вызывает Route;
 export default class Router {
 
-    static _instance: Router | null = null;
+    private static _instance: Router | null = null;
 
-    private _rootSelector: string | null = null;
+    private _rootQuery: string | null = null;
     private _routes: Route[] = [];
     private _history = window.history;
     private _currentRoute: Route | null = null;
     public badRouteHandler?: () => void;
 
-    constructor(rootSelector: string | null = null) {
+    constructor(rootQuery: string | null = null) {
         // Реализована возможность создания экземпляра без инициализации
         if (Router._instance) {
-            if (rootSelector && !Router._instance._rootSelector)
-                Router._instance._rootSelector = rootSelector;
+            if (rootQuery && !Router._instance._rootQuery)
+                Router._instance._rootQuery = rootQuery;
             return Router._instance;
         }
-        this._rootSelector = rootSelector;
+        this._rootQuery = rootQuery;
         Router._instance = this;
     }
 
     // Вспомогательный метод для проверки состояния инициализации корневого селектора
     _rootCheck() {
-        if (!this._rootSelector) {
+        if (!this._rootQuery) {
             throw new Error(`${this.constructor.name}: Instance exist, but root node selector not defined yet`);
         }
     }
 
     // Регистрация нового роута
-    use(path: string, block: typeof Block, context: any) {
+    use(
+        path: string,
+        block: typeof Block,
+        context: any
+    ) {
         this._rootCheck();
-        const route = new Route(path, block, {rootQuery: this._rootSelector, ...context});
+        const route = new Route(path, block, {rootQuery: this._rootQuery, ...context});
         this._routes.push(route);
         return this;
     }
 
     // запустить роутер
     start() {
-        window.onpopstate = (event: any) => this._onRoute(event.currentTarget.location.pathname);
         this._onRoute(window.location.pathname);
+        window.onpopstate = (event: any) => this._onRoute(event.currentTarget.location.pathname);
     }
 
     // Обработчик изменения состояния
@@ -64,8 +68,8 @@ export default class Router {
 
     // Переход по указанному пути
     go(path: string) {
-        this._history.pushState({}, "", path);
         this._onRoute(path);
+        this._history.pushState({}, "", path);
     }
 
     // переход назад по истории браузера

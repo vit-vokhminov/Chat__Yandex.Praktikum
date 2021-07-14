@@ -77,8 +77,6 @@ export class HTTPTransport {
                 xhr.send();
             } else {
                 xhr.send(JSON.stringify(data));
-                console.log(JSON.parse(data));
-                console.log(JSON.stringify(data));
             }
         });
     };

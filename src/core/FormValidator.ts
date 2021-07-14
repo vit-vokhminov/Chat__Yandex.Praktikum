@@ -54,15 +54,18 @@ export default class FormValidator {
     protected _inputs: NodeListOf<any> | null;
     protected _dataHandler: Function | null = null;
 
-    constructor(protected readonly _rules: any) {}
+    constructor(protected readonly _rules: any) {
+    }
 
     public attach(root: Element, selector: string) {
         let form = root.querySelector(selector);
-        if (!form)
+        if (!form) {
             throw new Error(`${this.constructor.name}: Form "${selector}" not found`);
+        }
         let inputs = form.querySelectorAll('input');
-        if (inputs.length === 0)
+        if (inputs.length === 0) {
             throw new Error(`${this.constructor.name}: Form "${selector}" has no input fields`);
+        }
         this._form = form;
         this._inputs = inputs;
         this._bindListeners();
@@ -80,19 +83,21 @@ export default class FormValidator {
 
     protected _handle() {
         let data: any = {};
-        if (!(this._inputs && this._dataHandler))
+        if (!(this._inputs && this._dataHandler)) {
             return;
+        }
         this._inputs.forEach(input => {
-            if(input.name !== 'conf_password'){
-                data[input.name] = input.value
+            if (input.name !== 'conf_password') {
+                data[input.name] = input.value;
             }
         });
         this._dataHandler(data);
     }
 
     protected _bindListeners() {
-        if (!(this._inputs && this._form))
+        if (!(this._inputs && this._form)) {
             return;
+        }
         FormValidator.inputEvents.forEach(event => {
             // @ts-ignore
             this._inputs.forEach((input: HTMLElement) => input.addEventListener(`${event}`, this._validate.bind(this)));
@@ -101,8 +106,9 @@ export default class FormValidator {
     }
 
     protected _unbindListeners() {
-        if (!(this._inputs && this._form))
+        if (!(this._inputs && this._form)) {
             return;
+        }
         FormValidator.inputEvents.forEach(event => {
             // @ts-ignore
             this._inputs.forEach((input: HTMLElement) => input.removeEventListener(`${event}`, this._validate.bind(this)));
@@ -110,15 +116,17 @@ export default class FormValidator {
         this._form.removeEventListener('submit', this._submitHandler.bind(this));
     }
 
-    protected _validate(event: { target: HTMLInputElement } ) {
+    protected _validate(event: { target: HTMLInputElement }) {
         const input = event.target;
-        if (!this._rules.hasOwnProperty(input.name))
+        if (!this._rules.hasOwnProperty(input.name)) {
             return true;
+        }
 
         let errorField = null;
 
-        if (input.classList.contains('valid'))
+        if (input.classList.contains('valid')) {
             errorField = input;
+        }
 
         let err: string | null = null;
 
@@ -130,31 +138,31 @@ export default class FormValidator {
 
         if (err) {
             if (errorField) {
-                //errorField.textContent = err;
-                //errorField.classList.remove('form__error_hidden');
                 input.classList.add('input_error');
             }
             return false;
         }
 
-        if (errorField)
-            //errorField.classList.add('form__error_hidden');
+        if (errorField) {
             input.classList.remove('input_error');
+        }
         return true;
     }
 
-    protected _submitHandler(event: Event)
-    {
+    protected _submitHandler(event: Event) {
         event.preventDefault();
-        if (!this._inputs)
+        if (!this._inputs) {
             return;
+        }
         let isValid = true;
         this._inputs.forEach((input: HTMLElement) => {
             const pseudoEvent: any = {target: input};
-            if (!this._validate(pseudoEvent))
+            if (!this._validate(pseudoEvent)) {
                 isValid = false;
+            }
         });
-        if (isValid)
+        if (isValid) {
             this._handle();
+        }
     }
 }

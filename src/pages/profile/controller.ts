@@ -22,7 +22,7 @@ export class ProfileController extends Controller {
     async logout() {
         try {
             await authAPI.logout();
-            this.go(Routes.pageAuthorization);
+            this.go(Routes.login);
         } catch (e) {
             this.statusHandler(e.status);
         }

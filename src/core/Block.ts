@@ -18,7 +18,7 @@ export default class Block {
         FLOW_CDM: 'flow:component-did-mount',           // Завершена инициализация
         FLOW_CDU: 'flow:component-did-update',          // Обновлены параметры компонента
         FLOW_CWU: 'flow:component-will-unmount',        // Компонент демонтирован
-        FLOW_RENDER: 'flow:render',                      // Выполнена сборка компонента
+        FLOW_RENDER: 'flow:render',                     // Выполнена сборка компонента
     };
 
     private readonly _meta: Meta;
@@ -56,8 +56,6 @@ export default class Block {
      */
     _init() {
         this._createResources();
-        this.eventBus.emit(Block.EVENTS.FLOW_CDU);
-
         if (this._meta.storePath) {
             store.eventBus.on(this._meta.storePath, () => this.eventBus.emit(Block.EVENTS.FLOW_RENDER));
         }
@@ -116,6 +114,7 @@ export default class Block {
         if (this._element) {
             this._element.innerHTML = block;
         }
+        this.render();
     }
 
     render() {

@@ -8,7 +8,11 @@ export default class Route {
     private readonly _props: any;
     private _block: any = null;
 
-    constructor(path: string, constructor: typeof Block, props: any) {
+    constructor(
+        path: string,
+        constructor: typeof Block,
+        props: any
+    ) {
         this._path = path;
         this._constructor = constructor;
         this._block = null;
@@ -25,6 +29,7 @@ export default class Route {
     leave(): void {
         if (this._block) {
             this._block._componentDidUnmount();
+            this._block = null;
         }
     }
 
