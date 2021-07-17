@@ -1,6 +1,19 @@
-.idea
+# dependencies
 /node_modules
-.cache
+
+# testing
+
+
+# production
+/build
 /dist
+
+# misc
+.idea/
+*.idea
+.gitignore
+
+.cache
+
 .eslintrc.js
 .eslintignore

@@ -6,6 +6,6 @@ const PORT = 3000;
 
 app.use(express.static(path.resolve('dist')));
 
-app.listen(PORT, function () {
-  console.log(`App listening on port ${PORT}!`);
+app.listen(PORT, function() {
+    console.log(`App listening on port ${PORT}!`);
 });

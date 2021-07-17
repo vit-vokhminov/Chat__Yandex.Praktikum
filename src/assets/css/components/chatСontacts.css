@@ -1,0 +1,38 @@
+.list_chat__contacts {
+
+}
+.list_chat_line {
+    border-top:1px solid #EAEAEA;padding: 12px 10px;width: 100%;cursor: pointer;
+    display: -ms-flexbox;display: -webkit-flex;display: flex;-webkit-flex-direction: row;-ms-flex-direction: row;flex-direction: row;
+    -webkit-flex-wrap: nowrap;-ms-flex-wrap: nowrap;flex-wrap: nowrap;-webkit-justify-content: flex-start;-ms-flex-pack: start;
+    justify-content: flex-start;-webkit-align-content: stretch;-ms-flex-line-pack: stretch;align-content: stretch;
+}
+.list_chat_line:hover {
+    background: #E4EDFD;
+}
+.list_chat_line_active {
+    background-color: #E4EDFD;
+}
+.list_chat_line__avatar {
+    width: 47px;height: 47px;background: #EFEFEF;border-radius: 50%;overflow: hidden;
+}
+.list_chat_line__data {
+    width: calc(100% - 47px);padding: 0 30px 0 9px;position: relative;
+}
+.list_chat_line__data h4 {
+    font-weight: 600;font-size: 13px;line-height: 13px;margin-bottom: 4px;
+}
+.list_chat_line__data p {
+    font-weight: 500;font-size: 12px;line-height: 15px;color: #999999;
+}
+.list_chat_line__data p span {
+    color: #1E1E1E;
+}
+.list_chat_line__data .time {
+    width: 25px;height: 13px;position: absolute;top: 0px;right: 0px;font-weight: 500;font-size: 9px;line-height: 13px;
+    text-align: right;color: #999999;
+}
+.list_chat_line__data .col_messages {
+    width: 20px;height: 20px;position: absolute;bottom: 0px;right: 0px;font-weight: 500;font-size: 11px;line-height: 12px;
+    text-align: center;color: #FFFFFF;background: #3369F3;border-radius: 50%;overflow: hidden;padding-top: 3.5px;
+}
