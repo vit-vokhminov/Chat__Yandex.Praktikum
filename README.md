@@ -1,3 +1,5 @@
+pull request https://github.com/vit-vokhminov/middle.messenger.praktikum.yandex/pull/4
+
 Не как не могу разобраться с деплоем на heroku.
 
 Перепробовал все способы в разделе "Deployment method". 
