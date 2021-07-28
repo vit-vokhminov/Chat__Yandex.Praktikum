@@ -1,9 +1,9 @@
 import {template} from "./index.tmpl";
-import Block from "../../core/Block";
-import {storeMap} from "../../config";
-import Index from '../../components/arrowBack/index';
 import controller from "./controller";
-import {Routes} from "../../index";
+import Block from "Core/Block";
+import Index from 'Components/arrowBack/index';
+import {Routes} from "Src/index";
+import {storeMap} from "Src/config";
 
 export default class Profile extends Block {
     constructor(props: any) {

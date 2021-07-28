@@ -1,11 +1,11 @@
 import { template } from "./index.tmpl";
-import Block from "../../core/Block";
-import Index, {dataMessages} from '../../components/messages/index';
-import Button from "../../components/button/index";
 import controller from "./controller";
-import {Routes} from "../../index";
-import FormValidator from "../../core/FormValidator";
-import {chatNameValidationRules, loginValidationRules, storeMap} from "../../config";
+import Block from "Core/Block";
+import FormValidator from "Core/FormValidator";
+import Index, {dataMessages} from 'Components/messages/index';
+import Button from "Components/button/index";
+import {Routes} from "Src/index";
+import {chatNameValidationRules, loginValidationRules, storeMap} from "Src/config";
 
 const newChatValidator = new FormValidator(chatNameValidationRules);
 const addUserValidator = new FormValidator(loginValidationRules);

@@ -22,7 +22,7 @@ export default class SubmitForm {
             err: 'Недопустимый формат email'
         },
         PHONE: {
-            exp: /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/,
+            exp: /^\+?(\d{1,3})?[- .]?\(?(?:\d{2,3})\)?[- .]?\d\d\d[- .]?\d\d\d\d$/,
             err: 'Недопустимый формат номера'
         }
     }
@@ -35,10 +35,10 @@ export default class SubmitForm {
     constructor(protected readonly _rules: any) {}
 
     public attach(root: Element, selector: string) {
-        let form = root.querySelector(selector);
+        const form = root.querySelector(selector);
         if (!form)
             throw new Error(`${this.constructor.name}: Form "${selector}" not found`);
-        let inputs = form.querySelectorAll('input');
+        const inputs = form.querySelectorAll('input');
         if (inputs.length === 0)
             throw new Error(`${this.constructor.name}: Form "${selector}" has no input fields`);
         this._form = form;
@@ -57,7 +57,7 @@ export default class SubmitForm {
     }
 
     protected _handle() {
-        let data: any = {};
+        const data: any = {};
         if (!(this._inputs && this._dataHandler))
             return;
         this._inputs.forEach(input => data[input.name] = input.value);
@@ -111,9 +111,10 @@ export default class SubmitForm {
             return false;
         }
 
-        if (errorField)
+        if (errorField){
             //errorField.classList.add('form__error_hidden');
             input.classList.add('input_error');
+        }
         return true;
     }
 

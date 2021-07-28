@@ -25,7 +25,7 @@ export default class FormValidator {
             err: 'Недопустимый формат email'
         },
         PHONE: {
-            exp: /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/,
+            exp: /^\+?(\d{1,3})?[- .]?\(?(?:\d{2,3})\)?[- .]?\d\d\d[- .]?\d\d\d\d$/,
             err: 'Недопустимый формат номера'
         },
         PASSWORD_STRENGTH: {
@@ -58,11 +58,11 @@ export default class FormValidator {
     }
 
     public attach(root: Element, selector: string) {
-        let form = root.querySelector(selector);
+        const form = root.querySelector(selector);
         if (!form) {
             throw new Error(`${this.constructor.name}: Form "${selector}" not found`);
         }
-        let inputs = form.querySelectorAll('input');
+        const inputs = form.querySelectorAll('input');
         if (inputs.length === 0) {
             throw new Error(`${this.constructor.name}: Form "${selector}" has no input fields`);
         }
@@ -82,7 +82,7 @@ export default class FormValidator {
     }
 
     protected _handle() {
-        let data: any = {};
+        const data: any = {};
         if (!(this._inputs && this._dataHandler)) {
             return;
         }

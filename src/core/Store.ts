@@ -1,5 +1,5 @@
 import EventBus from "./EventBus";
-import {set} from "../utilities/objectHandlers";
+import {set} from "Utilities/objectHandlers";
 
 export default class Store {
 
@@ -33,7 +33,7 @@ export default class Store {
 
         const pathArr = path.split('.');
         let result: any = this._store;
-        for (let key of pathArr) {
+        for (const key of pathArr) {
             const value = result[key];
             if (!value) {
                 return undefined;

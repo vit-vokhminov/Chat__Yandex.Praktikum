@@ -1,10 +1,10 @@
 import {template} from './index.tmpl';
-import Button from "../../components/button/index";
-import Block from "../../core/Block";
 import controller from "./controller";
-import {Routes} from "../../index";
-import FormValidator from "../../core/FormValidator";
-import {loginValidationRules as checks} from "../../config";
+import Block from "Core/Block";
+import FormValidator from "Core/FormValidator";
+import Button from "Components/button/index";
+import {Routes} from "Src/index";
+import {loginValidationRules as checks} from "Src/config";
 
 const validator = new FormValidator(checks);
 validator.setDataHandler(controller.signIn.bind(controller));

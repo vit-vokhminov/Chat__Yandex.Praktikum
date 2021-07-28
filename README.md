@@ -1,15 +1,3 @@
-## Ссылка на Pull Requests
-
-https://github.com/vit-vokhminov/middle.messenger.praktikum.yandex
-
-Как могло получиться что в моём gitHub теперь два репозитория:
-"mf.messenger.praktikum.yandex" и "middle.messenger.praktikum.yandex"
-
-Свой проект залил в mf, там уже были файлы с прошлых спринтов. А middle, который является пустым уходит на проверку.
-
-Второй репозиторий (middle) могли появиться после каких то изменений в "теории" курса?
-И что делать сейчас? Перенести проект в репозиторий "middle.messenger.praktikum.yandex"?
-
 # Чат__Яндекс.Практикум
 
 Учебный проект 1-го блока курса "Мидл фронтенд-разработчик" от Яндекс.Практикум
@@ -33,11 +21,14 @@ https://github.com/vit-vokhminov/middle.messenger.praktikum.yandex
 
 - Макет в Figma: https://www.figma.com/file/24EUnEHGEDNLdOcxg7ULwV/Chat?node-id=0%3A1
 
-## Установка
-
- - **npm install** - Установка необходимых зависимостей
+## Запуск
 
  - **npm run dev** - Компиляция. Запуск локального сервера с раздачей статики на порту 3000
+ - **npm run build** - Сборка продакшн-бандла
+ - **npm run watch** - Сборка в режиме разработки с рекомпиляцией при изменении исходных кодов
+ - **npm run start** - Запуск локального сервера с раздачей статики
+ - **npm run stats** - Аналитика модулей
+ - **npm run lint** -  Запуск проверок перед коммитом
 
 ## Технологии
 
@@ -45,6 +36,10 @@ https://github.com/vit-vokhminov/middle.messenger.praktikum.yandex
  - CSS
  - JavaScript
  - TypeScript
- - Parcel
- - ESLint
+ - Webpack
+ - ESLint / StyleLint
+ - Husky
+ - Docker
+ - Express
  - Git
+

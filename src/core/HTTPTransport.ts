@@ -45,7 +45,7 @@ export class HTTPTransport {
         return this.request(url, {...options, method: METHODS.DELETE}, options.timeout);
     };
 
-    request = (url: string, options: RequestOptions, timeout: number = 5000): Promise<any> => {
+    request = (url: string, options: RequestOptions, timeout = 5000): Promise<any> => {
         const {headers = {}, method, data} = options;
         url = `${this._baseURL}${url}`;
 

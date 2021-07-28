@@ -1,10 +1,10 @@
-@import url(./resetNormalize.css);
-@import url(./fonts.css);
-@import url(./pages/authorization.css);
-@import url(./pages/chat.css);
-@import url(./pages/pageError.css);
-@import url(./pages/profile.css);
-@import url(./pages/registration.css);
+/*@import url(./resetNormalize.css);*/
+/*@import url(./fonts.css);*/
+/*@import url(./pages/authorization.css);*/
+/*@import url(./pages/chat.css);*/
+/*@import url(./pages/pageError.css);*/
+/*@import url(./pages/profile.css);*/
+/*@import url(./pages/registration.css);*/
 
 
 html,body {height: 100%; }

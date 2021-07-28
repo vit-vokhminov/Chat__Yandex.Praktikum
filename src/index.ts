@@ -1,21 +1,30 @@
-import Router from './core/Router';
-import Authorization from './pages/authorization/index';
-import {dataAuthorization} from './pages/authorization/index.tmpl';
+import 'Assets/css/resetNormalize.css';
+import 'Assets/css/fonts.css';
+import 'Assets/css/pages/authorization.css';
+import 'Assets/css/pages/chat.css';
+import 'Assets/css/pages/pageError.css';
+import 'Assets/css/pages/profile.css';
+import 'Assets/css/pages/registration.css';
+import 'Assets/css/index.css';
 
-import Registration from './pages/registration/index';
-import {dataRegistration} from './pages/registration/index.tmpl';
+import Router from 'Core/Router';
+import Authorization from 'Pages/authorization/index';
+import {dataAuthorization} from 'Pages/authorization/index.tmpl';
 
-import {ErrorPage} from './pages/error/index';
+import Registration from 'Pages/registration/index';
+import {dataRegistration} from 'Pages/registration/index.tmpl';
 
-import Chat from './pages/chat/index';
+import {ErrorPage} from 'Pages/error/index';
 
-import Profile from './pages/profile/index';
+import Chat from 'Pages/chat/index';
 
-import ProfileEdit from './pages/profileEdit/index';
-import ProfileEditPass from './pages/profileEditPass/index';
+import Profile from 'Pages/profile/index';
+
+import ProfileEdit from 'Pages/profileEdit/index';
+import ProfileEditPass from 'Pages/profileEditPass/index';
 
 
-import Store from "./core/Store";
+import Store from "Core/Store";
 import {storeMap} from "./config";
 
 const router = new Router('.app');

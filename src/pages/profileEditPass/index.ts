@@ -1,10 +1,10 @@
 import {template} from './index.tmpl';
-import Block from "../../core/Block";
-import Button from "../../components/button/index";
-import FormValidator from "../../core/FormValidator";
-import {passwordValidationRules as checks, storeMap} from "../../config";
 import controller from "./controller";
-import Index from "../../components/arrowBack/index";
+import Block from "Core/Block";
+import FormValidator from "Core/FormValidator";
+import Button from "Components/button/index";
+import Index from "Components/arrowBack/index";
+import {passwordValidationRules as checks, storeMap} from "Src/config";
 
 const validator = new FormValidator(checks);
 validator.setDataHandler(controller.changeProfilePassword.bind(controller));
