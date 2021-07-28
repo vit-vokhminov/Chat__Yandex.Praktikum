@@ -1,8 +1,8 @@
 Не как не могу разобраться с деплоем на heroku.
 
-Перепробоал все способы в разделе "Deployment method". 
+Перепробовал все способы в разделе "Deployment method". 
 
-Чере метод GitHub получил такую ошибку при сборке https://pastebin.com/yz6QVGZY 
+Через метод GitHub получил такую ошибку при сборке https://pastebin.com/yz6QVGZY 
 
 При использовании других методов, либо просто ошибки в консоли, либо что то вроде https://pastebin.com/pjQSL4we
 
