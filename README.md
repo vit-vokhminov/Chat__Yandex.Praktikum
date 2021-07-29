@@ -1,3 +1,17 @@
+pull request https://github.com/vit-vokhminov/middle.messenger.praktikum.yandex/pull/4
+
+Не как не могу разобраться с деплоем на heroku.
+
+Перепробовал все способы в разделе "Deployment method". 
+
+Через метод GitHub получил такую ошибку при сборке https://pastebin.com/yz6QVGZY 
+
+При использовании других методов, либо просто ошибки в консоли, либо что то вроде https://pastebin.com/pjQSL4we
+
+
+
+
+
 # Чат__Яндекс.Практикум
 
 Учебный проект 1-го блока курса "Мидл фронтенд-разработчик" от Яндекс.Практикум
