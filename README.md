@@ -1,16 +1,9 @@
 pull request https://github.com/vit-vokhminov/middle.messenger.praktikum.yandex/pull/4
 
-Не как не могу разобраться с деплоем на heroku.
 
-Перепробовал все способы в разделе "Deployment method". 
+«[Ссылка на PullRequest](https://github.com/Pelmenya/middle.messenger.praktikum.yandex/pull/3)»
 
-Через метод GitHub получил такую ошибку при сборке https://pastebin.com/yz6QVGZY 
-
-При использовании других методов, либо просто ошибки в консоли, либо что то вроде https://pastebin.com/pjQSL4we
-
-
-
-
+«[Ссылка на сайт](https://chat-yandex-praktikum.herokuapp.com/chat)»
 
 # Чат__Яндекс.Практикум
 
