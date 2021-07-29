@@ -1,7 +1,4 @@
-pull request https://github.com/vit-vokhminov/middle.messenger.praktikum.yandex/pull/4
-
-
-«[Ссылка на PullRequest](https://github.com/Pelmenya/middle.messenger.praktikum.yandex/pull/3)»
+«[Ссылка на PullRequest](https://github.com/vit-vokhminov/middle.messenger.praktikum.yandex/pull/5)»
 
 «[Ссылка на сайт](https://chat-yandex-praktikum.herokuapp.com/chat)»
 
