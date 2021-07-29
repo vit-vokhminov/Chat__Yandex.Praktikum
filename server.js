@@ -3,10 +3,10 @@ const path = require('path');
 
 const app = express();
 
-const PORT = 4000
+const PORT = 4000;
 
 app.use(express.static('./dist'));
-app.set('port', (process.env.PORT || PORT));
+app.set('port', process.env.PORT || PORT);
 
 app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "dist", "index.html"));

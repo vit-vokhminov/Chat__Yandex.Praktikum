@@ -10,7 +10,7 @@ const {BundleAnalyzerPlugin} = require('webpack-bundle-analyzer');
 const isDev = process.env.NODE_ENV === 'development';
 const isProd = !isDev;
 
-const filename = ext => isDev ? `[name].${ext}` : `[name].[hash].${ext}`;
+const getFilename = ext => isDev ? `[name].${ext}` : `[name].[hash].${ext}`;
 
 const optimization = () => {
     const config = {
@@ -88,7 +88,7 @@ const plugins = () => {
             ]
         }),
         new MiniCssExtractPlugin({
-            filename: filename('css'),
+            filename: getFilename('css'),
         })
     ]
 
@@ -115,7 +115,7 @@ module.exports = {
         // [name] это паттерно, в который передаются ключи из entry
         // [hash] это отсутствия кэша
         // filename() это оптимизация, т.к. filename есть в нескольких местах
-        filename: filename('js'),
+        filename: getFilename('js'),
         // папка с копиляцией
         path: path.resolve(__dirname, 'dist')
     },
