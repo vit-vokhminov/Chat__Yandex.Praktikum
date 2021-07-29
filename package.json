@@ -8,7 +8,6 @@
     "build": "cross-env NODE_ENV=production webpack --mode production",
     "watch": "cross-env NODE_ENV=development webpack --mode development --watch",
     "start": "cross-env NODE_ENV=development webpack serve --mode development --open",
-    "stats": "webpack --json > stats.json && webpack-bundle-analyzer stats.json",
     "lint": "eslint src/**/*.ts",
     "lint-fix": "eslint src/**/*.ts --fix"
   },
@@ -61,7 +60,6 @@
     "ts-node": "^9.1.1",
     "typescript": "^4.3.5",
     "webpack": "^5.46.0",
-    "webpack-bundle-analyzer": "^4.4.2",
     "webpack-cli": "^4.7.2",
     "webpack-dev-server": "^3.11.2"
   },
