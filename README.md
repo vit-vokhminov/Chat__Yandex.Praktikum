@@ -1,16 +1,8 @@
-pull request https://github.com/vit-vokhminov/middle.messenger.praktikum.yandex/pull/4
+«[Ссылка на PullRequest](https://github.com/vit-vokhminov/middle.messenger.praktikum.yandex/pull/5)»
 
-Не как не могу разобраться с деплоем на heroku.
+«[Ссылка на сайт](https://chat-yandex-praktikum.herokuapp.com/chat)»
 
-Перепробовал все способы в разделе "Deployment method". 
-
-Через метод GitHub получил такую ошибку при сборке https://pastebin.com/yz6QVGZY 
-
-При использовании других методов, либо просто ошибки в консоли, либо что то вроде https://pastebin.com/pjQSL4we
-
-
-
-
+Задеплоиться не мог из-за большого количества зависимостей в webpack, heroku почему то такое количество зависимостей не вывозил. Файл почистил, деплой прошел. 
 
 # Чат__Яндекс.Практикум
 
