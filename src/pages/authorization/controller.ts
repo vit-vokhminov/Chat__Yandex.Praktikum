@@ -1,6 +1,7 @@
-import Controller from "../../core/Controller";
-import {authAPI, LoginFormData} from "../../api/AuthAPI";
-import {Routes} from "../../index";
+import Controller from "Core/Controller";
+import {authAPI, LoginFormData} from "Api/AuthAPI";
+import {Routes} from "Src/index";
+import {storeMap} from "Src/config";
 
 class LoginController extends Controller {
     constructor() {
@@ -18,14 +19,14 @@ class LoginController extends Controller {
 
     async checkAuth() {
         try {
-            await authAPI.getUserInfo();
+            const response = await authAPI.getUserInfo();
+            this.go(Routes.chat);
+            this.storeSet(storeMap.currentUserID, response.response["id"]);
         } catch (e) {
             return;
         }
-        this.go(Routes.chat);
     }
 }
-
 
 const loginController = new LoginController();
 export default loginController;

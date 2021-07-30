@@ -1,6 +1,6 @@
-import Controller from "../../core/Controller";
-import {authAPI, RegisterFormData} from "../../api/AuthAPI";
-import {Routes} from "../../index";
+import Controller from "Core/Controller";
+import {authAPI, RegisterFormData} from "Api/AuthAPI";
+import {Routes} from "Src/index";
 
 class SignUpController extends Controller {
     constructor() {

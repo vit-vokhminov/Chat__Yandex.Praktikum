@@ -8,24 +8,19 @@ import 'Assets/css/pages/registration.css';
 import 'Assets/css/index.css';
 
 import Router from 'Core/Router';
+import Store from "Core/Store";
+import {storeMap} from "./config";
+
 import Authorization from 'Pages/authorization/index';
 import {dataAuthorization} from 'Pages/authorization/index.tmpl';
-
 import Registration from 'Pages/registration/index';
 import {dataRegistration} from 'Pages/registration/index.tmpl';
-
 import {ErrorPage} from 'Pages/error/index';
-
 import Chat from 'Pages/chat/index';
-
 import Profile from 'Pages/profile/index';
-
 import ProfileEdit from 'Pages/profileEdit/index';
 import ProfileEditPass from 'Pages/profileEditPass/index';
 
-
-import Store from "Core/Store";
-import {storeMap} from "./config";
 
 const router = new Router('.app');
 

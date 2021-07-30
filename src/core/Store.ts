@@ -5,7 +5,7 @@ export default class Store {
 
     static _instance: Store;
     public eventBus: EventBus;
-    private readonly _store: {};
+    private readonly _store: Record<string, unknown>;
 
     constructor() {
         if (Store._instance) {
@@ -41,5 +41,9 @@ export default class Store {
             result = value;
         }
         return result;
+    }
+
+    forceEmit(path: string) {
+        this.eventBus.emit(path);
     }
 }

@@ -1,9 +1,12 @@
-import Controller from "../../core/Controller";
-import {chatsAPI, CreateChatData, QueryOptions} from "../../api/ChatsAPI";
-import {usersAPI, UserSearchData} from "../../api/UsersAPI";
-import {storeMap} from "../../config";
+import Controller from "Core/Controller";
+import {chatsAPI, CreateChatData, QueryOptions} from "Api/ChatsAPI";
+import {usersAPI, UserSearchData} from "Api/UsersAPI";
+import {SETTINGS, storeMap} from "Src/config";
 
 class ChatsController extends Controller {
+
+    protected _socket: WebSocket | null = null;
+
     constructor() {
         super();
     }
@@ -59,8 +62,8 @@ class ChatsController extends Controller {
             return;
         }
         for (const chat of chats) {
-            chat.last = 'last message';
-            chat.time = 'time';
+            chat.last = "last message";
+            chat.time = "time";
             const unreads = await this.getUnreads(chat.id);
             if (unreads) {
                 chat.unreads = unreads.unread_count;
@@ -68,7 +71,7 @@ class ChatsController extends Controller {
                 chat.unreads = 0;
             }
         }
-        this.storeSet(storeMap.chatsList, {chats: chats});
+        this.storeSet(storeMap.chatPageProps, {chats: chats});
     }
 
     async addUser(data: UserSearchData) {
@@ -91,6 +94,66 @@ class ChatsController extends Controller {
             this.statusHandler(e.status);
             alert(`Пользователь ${data.login} удалён из чата`);
         }
+    }
+
+    async getChatToken(chatID: number) {
+        try {
+            const response = await chatsAPI.getToken(chatID);
+            return response.response["token"];
+        } catch (e) {
+            this.statusHandler(e.status);
+        }
+    }
+
+    socketOpen(chatID: number) {
+        if (this._socket) {
+            this.socketClose();
+        }
+        const userID = this.storeGet(storeMap.currentUserID);
+        const token = this.storeGet(storeMap.activeChatToken);
+        this._socket = new WebSocket(`${SETTINGS.wssURL}/chats/${userID}/${chatID}/${token}`);
+        this._socket.addEventListener("message", this.messageHandler.bind(this));
+    }
+
+    socketClose() {
+        this._socket?.removeEventListener("message", this.messageHandler.bind(this));
+        this._socket?.close();
+    }
+
+    socketSendText(msg: string) {
+        this._socket?.send(JSON.stringify({
+            content: msg,
+            type: "message"
+        }));
+    }
+
+    messageHandler(event: any) {
+        const currentUserID = this.storeGet(storeMap.currentUserID);
+        const received = JSON.parse(event.data);
+        if (received.type === "user connected") {
+            return;
+        }
+
+        const MyData = new Date('December 25, 1995 23:15:30');
+        const date_Hours = MyData.getHours();
+        const date_Minutes = MyData.getMinutes();
+        const data_ = `${date_Hours}:${date_Minutes}`;
+
+        const msg = {
+            text: received.content,
+            attachmentType: false,
+            attachmentSource: false,
+            datetime: received.time,
+            time: data_,
+            isOwner: received.user_id === currentUserID,
+            isRead: true
+        }
+        const props = this.storeGet(storeMap.chatPageProps);
+        if (!props.feed) {
+            props.feed = [];
+        }
+        props.feed.push(msg);
+        this.storeForceEmit(storeMap.chatPageProps);
     }
 }
 

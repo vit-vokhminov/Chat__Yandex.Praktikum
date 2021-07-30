@@ -29,7 +29,6 @@ export default class Route {
     leave(): void {
         if (this._block) {
             this._block._componentDidUnmount();
-            this._block = null;
         }
     }
 

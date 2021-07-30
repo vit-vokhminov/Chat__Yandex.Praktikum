@@ -30,6 +30,10 @@ export default class Controller {
         return store.get(path);
     }
 
+    storeForceEmit(path: string) {
+        store.forceEmit(path);
+    }
+
     public statusHandler(status: number, descriptions: ErrorsDescription = null): boolean {
         // Обрабатываются только коды ошибок
         if (status < 400) {
@@ -45,11 +49,10 @@ export default class Controller {
         } else {                                                            // Присваиваем описание по умолчанию
             description = httpErrorCodes.default;
         }
+
         const props: ErrorStatus = {type: status, description: description};
         store.set(errorProps, props);
         this.go(Routes.error);
         return true;
     }
-
-
 }

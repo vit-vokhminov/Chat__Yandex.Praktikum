@@ -28,8 +28,9 @@ export class HTTPTransport {
     }
 
     get = (url: string, options: Options = {}) => {
-        if (options.data)
+        if (options.data) {
             url += queryStringify(options.data);
+        }
         return this.request(url, {...options, method: METHODS.GET}, options.timeout);
     };
 

@@ -289,6 +289,7 @@ input.inp_message {
     -ms-flex-align: center;align-items: center;
 }
 .send_message_bt span {
+    pointer-events: none;
     width: 17px;height: 17px;background: url("../img/icon/arrow-right2.svg") center no-repeat;cursor: pointer;fill:#fff;
 }
 .send_message_bt:hover {
