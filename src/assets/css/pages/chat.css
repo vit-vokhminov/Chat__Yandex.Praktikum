@@ -144,7 +144,7 @@ input.inp_search {
 .chat_messages_bottom {
     border-top: 1px solid #EAEAEA;height: 58px;padding-top: 10px;width: 100%;
 }
-.chat_messages_bottom form {
+.chat_messages_bottom .form {
     display: -ms-flexbox;display: -webkit-flex;display: flex;-webkit-flex-direction: row;-ms-flex-direction: row;flex-direction: row;
     -webkit-flex-wrap: nowrap;-ms-flex-wrap: nowrap;flex-wrap: nowrap;-webkit-justify-content: flex-start;-ms-flex-pack: start;
     justify-content: flex-start;-webkit-align-content: stretch;-ms-flex-line-pack: stretch;align-content: stretch;

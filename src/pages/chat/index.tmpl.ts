@@ -83,10 +83,38 @@ export const template =`
                     </div>
                 </div>
 
-                {{> messages}}
+                <div class="chat_messages_main">
+                    <div class="chat_messages_content">
+                        <div class="field_messages">
+                        
+<!--                            <div class="feed_messages__day">-->
+<!--                                <span>{{day}}</span>-->
+<!--                            </div>-->
+                            
+                            {{#each this.feed}}
+                                
+                                <div class="message_list my_messages">
+                                    <div class="message__time">{{time}}</div>
+                                    <div class="message__readit">
+                                        <svg width="11" height="5" viewBox="0 0 11 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <line y1="-0.5" x2="3.765" y2="-0.5" transform="matrix(0.705933 0.708278 -0.705933 0.708278 0.700195 2.33313)" stroke="#3369F3"/>
+                                            <line y1="-0.5" x2="5.6475" y2="-0.5" transform="matrix(0.705933 -0.708278 0.705933 0.708278 3.35828 5.00006)" stroke="#3369F3"/>
+                                            <line y1="-0.5" x2="5.6475" y2="-0.5" transform="matrix(0.705933 -0.708278 0.705933 0.708278 6.01587 5.00006)" stroke="#3369F3"/>
+                                        </svg>
+                                    </div>
+                                    <div class="message">
+                                        <p>{{text}}</p>
+                                    </div>
+                                </div>
+                               
+                            {{/each}}
+                        
+                        </div>
+                    </div>
+                </div>
 
                 <div class="chat_messages_bottom">
-                    <form action="" method="post" >
+                    <div class="form">
                         <div class="attach">
                             <div class="attach_bt"></div>
                             <div class="balloon attach_option_balloon">
@@ -114,7 +142,7 @@ export const template =`
                             <input type="text" name="inp_message" class="inp_message" placeholder="Сообщение">
                         </div>
                         <div class="send_message">
-                            <button type="submit" class="send_message_bt"><span></span></button>
+                            <button class="send_message_bt"><span style="pointer-events: none"></span></button>
                         </div>
                     </form>
                 </div>

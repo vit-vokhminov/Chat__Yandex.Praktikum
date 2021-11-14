@@ -1,5 +1,5 @@
 import {template} from "./template";
-import Block from "../../core/Block";
+import Block from "Core/Block";
 
 export default class ErrorBanner extends Block {
     constructor(props: any, storePath: string | null = null) {

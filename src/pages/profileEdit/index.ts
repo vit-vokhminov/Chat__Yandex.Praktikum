@@ -1,11 +1,11 @@
 import {template} from "./index.tmpl";
-import Block from "../../core/Block";
-import Button from "../../components/button/index";
-import Index from '../../components/arrowBack/index';
-import FormValidator from "../../core/FormValidator";
-
-import {loginValidationRules as checks, storeMap} from "../../config";
 import controller from "./controller";
+import Block from "Core/Block";
+import FormValidator from "Core/FormValidator";
+import Button from "Components/button/index";
+import Index from 'Components/arrowBack/index';
+
+import {loginValidationRules as checks, storeMap} from "Src/config";
 
 
 const validator = new FormValidator(checks);
@@ -100,7 +100,7 @@ export default class Profile extends Block {
     avatarFormHandler(event: Event) {
         event.preventDefault();
         const target = event.target as HTMLFormElement;
-        let formData = new FormData(target);
+        const formData = new FormData(target);
         controller.changeProfileAvatar(formData);
     }
 

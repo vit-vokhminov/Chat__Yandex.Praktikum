@@ -1,10 +1,16 @@
 {
-    "parser": "babel-eslint",
+    "parser": "@typescript-eslint/parser",
     "env": {
         "es6": true,
         "browser": true,
         "node": true
     },
+    "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
+    "parserOptions": {
+        "ecmaVersion": 12,
+        "sourceType": "module"
+    },
+    "plugins": ["@typescript-eslint"],
     "rules": {
         "require-jsdoc" : 0,
         "semi": "off",
@@ -15,6 +21,12 @@
         "linebreak-style": 0,
         "indent": ["error", 4],
         "operator-linebreak" : "off",
-        "moduleResolution": "off"
+        "moduleResolution": "off",
+        "@typescript-eslint/no-var-requires": 0,
+        "@typescript-eslint/ban-ts-comment" : 1,
+        "@typescript-eslint/ban-types": 1,
+        "@typescript-eslint/no-empty-function": 1,
+        "@typescript-eslint/no-this-alias": 1,
+        "no-prototype-builtins": 1
     }
 }

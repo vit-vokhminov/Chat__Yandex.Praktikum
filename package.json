@@ -1,31 +1,71 @@
 {
   "name": "chat__Yandex.Praktikum",
   "version": "1.0.0",
-  "description": "",
+  "description": "my castom chat",
+  "private": true,
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development webpack --mode development",
+    "build": "cross-env NODE_ENV=production webpack --mode production",
+    "watch": "cross-env NODE_ENV=development webpack --mode development --watch",
+    "start": "cross-env NODE_ENV=development webpack serve --mode development --open",
+    "lint": "eslint src/**/*.ts",
+    "lint-fix": "eslint src/**/*.ts --fix"
+  },
+  "keywords": [
+    "js",
+    "ts",
+    "webpack"
+  ],
+  "author": "vit-vokhminov",
+  "license": "ISC",
   "main": "index.js",
   "dependencies": {
+    "@babel/polyfill": "^7.12.1",
     "handlebars": "^4.7.7"
   },
+  "browserslist": "> 0.25%, not dead",
   "devDependencies": {
+    "@babel/core": "^7.14.8",
+    "@babel/plugin-proposal-class-properties": "^7.14.5",
+    "@babel/preset-env": "^7.14.8",
+    "@babel/preset-typescript": "^7.14.5",
     "@types/node": "^14.14.31",
-    "@typescript-eslint/eslint-plugin": "^4.17.0",
-    "@typescript-eslint/parser": "^4.17.0",
+    "@typescript-eslint/eslint-plugin": "^4.28.5",
+    "@typescript-eslint/parser": "^4.28.5",
+    "assets-webpack-plugin": "^7.1.1",
     "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.2.2",
+    "clean-webpack-plugin": "^4.0.0-alpha.0",
+    "copy-webpack-plugin": "^9.0.1",
     "copyfiles": "^2.4.1",
-    "eslint": "^7.29.0",
+    "cross-env": "^7.0.3",
+    "css-loader": "^6.2.0",
+    "eslint": "^7.31.0",
     "eslint-config-google": "^0.14.0",
     "eslint-import-resolver-alias": "^1.1.2",
     "eslint-loader": "^4.0.2",
     "eslint-plugin-import": "^2.23.4",
     "express": "^4.17.1",
-    "parcel-bundler": "^1.12.5",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.3.2",
+    "husky": "^7.0.1",
+    "lint-staged": "^11.1.1",
+    "mini-css-extract-plugin": "^2.1.0",
+    "mocha": "^9.0.3",
+    "optimize-css-assets-webpack-plugin": "^6.0.1",
+    "postcss": "^8.3.6",
+    "postcss-loader": "^6.1.1",
+    "style-loader": "^3.2.1",
+    "terser-webpack-plugin": "^5.1.4",
     "ts-node": "^9.1.1",
-    "typescript": "^4.2.3"
+    "typescript": "^4.3.5",
+    "webpack": "^5.46.0",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2"
   },
-  "scripts": {
-    "dev": "parcel src/index.html -p 3000 --no-cache",
-    "build": "parcel build index.html --no-source-maps --no-cache"
-  },
-  "author": "",
-  "license": "ISC"
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
+  }
 }

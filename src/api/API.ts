@@ -1,5 +1,5 @@
-import {HTTPTransport, Options} from "../core/HTTPTransport";
-import {SETTINGS} from "../config";
+import {HTTPTransport, Options} from "Core/HTTPTransport";
+import {SETTINGS} from "Src/config";
 
 const transport = new HTTPTransport(SETTINGS.baseURL);
 
@@ -47,3 +47,4 @@ export class API {
         }
     }
 }
+

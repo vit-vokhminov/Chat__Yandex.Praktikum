@@ -1,8 +1,8 @@
 import Router from "./Router";
 import {Routes} from "../index";
 import Store from "./Store";
-import {storeMap, httpErrorCodes} from "../config";
-import {ErrorStatus} from "../components/errorBanner/types";
+import {storeMap, httpErrorCodes} from "Src/config";
+import {ErrorStatus} from "Components/errorBanner/types";
 
 const router = new Router();
 const store = new Store();
@@ -30,6 +30,10 @@ export default class Controller {
         return store.get(path);
     }
 
+    storeForceEmit(path: string) {
+        store.forceEmit(path);
+    }
+
     public statusHandler(status: number, descriptions: ErrorsDescription = null): boolean {
         // Обрабатываются только коды ошибок
         if (status < 400) {
@@ -45,11 +49,10 @@ export default class Controller {
         } else {                                                            // Присваиваем описание по умолчанию
             description = httpErrorCodes.default;
         }
+
         const props: ErrorStatus = {type: status, description: description};
         store.set(errorProps, props);
         this.go(Routes.error);
         return true;
     }
-
-
 }

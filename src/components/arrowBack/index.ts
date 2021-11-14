@@ -1,4 +1,4 @@
-import Block from "../../core/Block";
+import Block from "Core/Block";
 import {template} from './index.tmpl';
 
 export default class Index extends Block {

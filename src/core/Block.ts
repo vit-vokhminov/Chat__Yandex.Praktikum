@@ -1,6 +1,6 @@
-import EventBus from './EventBus';
-import Store from './Store';
-import {merge} from '../utilities/objectHandlers';
+import EventBus from "./EventBus";
+import Store from "./Store";
+import {merge} from "Utilities/objectHandlers";
 
 type Property = Record<string, any>;
 
@@ -14,11 +14,11 @@ const store = new Store();
 
 export default class Block {
     static EVENTS = {
-        INIT: 'init',                                   // Завершена работа конструктора
-        FLOW_CDM: 'flow:component-did-mount',           // Завершена инициализация
-        FLOW_CDU: 'flow:component-did-update',          // Обновлены параметры компонента
-        FLOW_CWU: 'flow:component-will-unmount',        // Компонент демонтирован
-        FLOW_RENDER: 'flow:render',                     // Выполнена сборка компонента
+        INIT: "init",                                   // Завершена работа конструктора
+        FLOW_CDM: "flow:component-did-mount",           // Завершена инициализация
+        FLOW_CDU: "flow:component-did-update",          // Обновлены параметры компонента
+        FLOW_CWU: "flow:component-will-unmount",        // Компонент демонтирован
+        FLOW_RENDER: "flow:render",                     // Выполнена сборка компонента
     };
 
     private readonly _meta: Meta;
@@ -33,7 +33,7 @@ export default class Block {
      * @store {string} стора обыкновенная
      * @tagName {HTMLElement}
      */
-    constructor(props = {}, storePath: string | null = null, tagName = 'div') {
+    constructor(props = {}, storePath: string | null = null, tagName = "div") {
         this._meta = {tagName, props, storePath};
         this._props = this._makePropsProxy(props);
         this.eventBus = new EventBus();
