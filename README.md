@@ -1,8 +1,8 @@
-«[Ссылка на сайт](https://chat-yandex-praktikum.herokuapp.com/chat)»
-
 # Чат__Яндекс.Практикум
 
 Учебный проект 1-го блока курса "Мидл фронтенд-разработчик" от Яндекс.Практикум
+
+«[Ссылка на сайт](https://chat-yandex-praktikum.herokuapp.com/chat)»
 
 ## Краткое описание
 
