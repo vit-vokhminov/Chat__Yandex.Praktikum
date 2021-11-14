@@ -1,5 +1,3 @@
-«[Ссылка на PullRequest](https://github.com/vit-vokhminov/middle.messenger.praktikum.yandex/pull/5)»
-
 «[Ссылка на сайт](https://chat-yandex-praktikum.herokuapp.com/chat)»
 
 # Чат__Яндекс.Практикум
